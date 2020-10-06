@@ -113,7 +113,7 @@ class DataManager {
                                    isOnline: false,
                                    hasUnreadMessages: false),
                              .init(name: "Ted",
-                                   message: "Avesome Avesome Avesome Avesome",
+                                   message: nil,
                                    date: Formatter.getDate(from: "2018/10/08 12:31"),
                                    isOnline: false,
                                    hasUnreadMessages: true)])]

@@ -16,7 +16,7 @@ class ConversationsCell: UITableViewCell, ConfigurableView {
     
     func configure(with model: ConversationCellModel) {
         nameLabel.text = model.name
-        messageLabel.text = model.message
+        messageLabel.text = (model.message != nil) ? model.message : "No messages yet"
         if Date().hours(from: model.date) > 24 {
             dateLabel.text = Formatter.getDate(from: model.date)
         } else {
