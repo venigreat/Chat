@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var firstLetterLabel: UILabel!
     @IBOutlet weak var secondLetterLabel: UILabel!
     @IBOutlet weak var saveButton: CustomButton!
+    @IBOutlet weak var closeButton: UIButton!
     
     //MARK: - Public
     
@@ -24,6 +25,7 @@ class ProfileViewController: UIViewController {
         setupProfileButton()
         setupProfilePictire()
         setupSaveButton()
+        setupCloseButton()
         super.viewDidLoad()
         Logger.log("Frame из viewDidLoad \(saveButton.frame)")
     }
@@ -32,6 +34,9 @@ class ProfileViewController: UIViewController {
         super.viewDidAppear(animated)
         //Данные фрейма пересчитываются исходя из размера экрана, других элементов
         Logger.log("Frame из viewDidAppear \(saveButton.frame)")
+    }
+    @IBAction func tapCloseButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @objc func tapProfileButton(_ sender:UITapGestureRecognizer) {
@@ -86,5 +91,11 @@ class ProfileViewController: UIViewController {
     
     private func setupSaveButton() {
         saveButton.layer.cornerRadius = 16
+    }
+    
+    private func setupCloseButton() {
+        closeButton.clipsToBounds = true
+        closeButton.contentMode = .scaleAspectFill
+        closeButton.setBackgroundImage(UIImage(named: "cancel.png"), for: .normal)
     }
 }
