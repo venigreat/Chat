@@ -30,11 +30,13 @@
 		F3877E61251531A500114A68 /* TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3877E60251531A500114A68 /* TestTests.swift */; };
 		F3877E6C251531A500114A68 /* TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3877E6B251531A500114A68 /* TestUITests.swift */; };
 		F3877E7A25153E4200114A68 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3877E7925153E4200114A68 /* Logger.swift */; };
+		F393345F25349AE3006D4897 /* ThemesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F393345E25349AE3006D4897 /* ThemesManager.swift */; };
 		F39646892518D4640072DACD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39646882518D4640072DACD /* ProfileViewController.swift */; };
 		F3C842462519243600DF050B /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3C842452519243600DF050B /* SFProDisplay-Regular.ttf */; };
 		F3C84248251924CD00DF050B /* SF Pro Text Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3C84247251924CD00DF050B /* SF Pro Text Regular.ttf */; };
 		F3C8424A251924EB00DF050B /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3C84249251924EB00DF050B /* Roboto-Regular.ttf */; };
 		F3C8424D2519E19F00DF050B /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8424C2519E19F00DF050B /* ImagePickerManager.swift */; };
+		F3F0C9B8252E23FE00104EE0 /* ThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F0C9B7252E23FE00104EE0 /* ThemesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,12 +86,14 @@
 		F3877E6B251531A500114A68 /* TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUITests.swift; sourceTree = "<group>"; };
 		F3877E6D251531A500114A68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3877E7925153E4200114A68 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		F393345E25349AE3006D4897 /* ThemesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesManager.swift; sourceTree = "<group>"; };
 		F39646882518D4640072DACD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F3C842452519243600DF050B /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		F3C84247251924CD00DF050B /* SF Pro Text Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Pro Text Regular.ttf"; sourceTree = "<group>"; };
 		F3C84249251924EB00DF050B /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		F3C8424B251925A600DF050B /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		F3C8424C2519E19F00DF050B /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
+		F3F0C9B7252E23FE00104EE0 /* ThemesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,7 @@
 				F3C8424C2519E19F00DF050B /* ImagePickerManager.swift */,
 				F37076002520E71000A9F8D1 /* DateFormatter.swift */,
 				F36DE6A7252C67DB009EDEF6 /* DataManager.swift */,
+				F393345E25349AE3006D4897 /* ThemesManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 		F3877E48251531A400114A68 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				F3F0C9B6252E23C700104EE0 /* ThemesView */,
 				F36B565F2528755400177FB9 /* Resources */,
 				F366052D2524B474006B4EA3 /* ConvirsationView */,
 				F366052A2524ACDB006B4EA3 /* Protocols */,
@@ -276,6 +282,14 @@
 				F3C842452519243600DF050B /* SFProDisplay-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F3F0C9B6252E23C700104EE0 /* ThemesView */ = {
+			isa = PBXGroup;
+			children = (
+				F3F0C9B7252E23FE00104EE0 /* ThemesViewController.swift */,
+			);
+			path = ThemesView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +433,8 @@
 				F36B56572527583800177FB9 /* MessageCell.swift in Sources */,
 				F3877E4E251531A400114A68 /* ConversationsListViewController.swift in Sources */,
 				F3877E4A251531A400114A68 /* AppDelegate.swift in Sources */,
+				F3F0C9B8252E23FE00104EE0 /* ThemesViewController.swift in Sources */,
+				F393345F25349AE3006D4897 /* ThemesManager.swift in Sources */,
 				F36605302524B4AC006B4EA3 /* ConversationViewController.swift in Sources */,
 				F36B565E2528693500177FB9 /* Date+Difference.swift in Sources */,
 				F39646892518D4640072DACD /* ProfileViewController.swift in Sources */,

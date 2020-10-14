@@ -15,7 +15,8 @@ class MessageCell: UITableViewCell, ConfigurableView {
     @IBOutlet weak var rightConstraint: NSLayoutConstraint!
     
     func configure(with model: MessageCellModel) {
-        backgroundColor = .gray
+        let theme = ThemeManager.getTheme()
+        backgroundColor = theme.backgroundColor
         selectionStyle = .none
         messageLabel.text = model.text
         messageLabel.layer.masksToBounds = true
@@ -26,9 +27,10 @@ class MessageCell: UITableViewCell, ConfigurableView {
         messageLabel.preferredMaxLayoutWidth = CGFloat.minimum(textWidth, viewWidth * 0.7)
         
         if model.isMy {
-            messageLabel.backgroundColor = .white
+            messageLabel.backgroundColor = theme.myMessageColor
             rightConstraint.isActive = false
         } else {
+            messageLabel.backgroundColor = theme.otherMessageColor
             leftConstraint.isActive = false
         }
     }

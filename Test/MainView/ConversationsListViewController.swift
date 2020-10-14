@@ -17,9 +17,14 @@ class ConversationsListViewController: UIViewController {
     
     let formatter = DateFormatter()
     let conversationList = DataManager().getChatListData()
+    let themesViewController = UIStoryboard(name: "Main", bundle: nil)
+        .instantiateViewController(withIdentifier: "themesViewController") as! ThemesViewController
+            
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        themesViewController.delegate = self
+        setupTheme()
         view.addSubview(tableView)
     }
     
@@ -70,6 +75,19 @@ class ConversationsListViewController: UIViewController {
             viewController.name = conversationList[index.section].list[index.row].name
         }
     }
+    
+    @IBAction func tapThemesButton(_ sender: Any) {
+        themesViewController.callback = { [weak self] in
+            self?.setupTheme() }
+        // weak избавляет от retain cycle
+        navigationController?.pushViewController(themesViewController, animated: true)
+    }
+    
+    private func setupTheme() {
+        let theme = ThemeManager.getTheme()
+        navigationController?.navigationBar.barTintColor = theme.backgroundColor
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: theme.textColor]
+    }
 }
 
 extension ConversationsListViewController: UITableViewDataSource {
@@ -101,5 +119,11 @@ extension ConversationsListViewController: UITableViewDataSource {
 extension ConversationsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "Conversation", sender: indexPath)
+    }
+}
+
+extension ConversationsListViewController: ChangeThemeDelegate {
+    func changeTheme(sender: Any) {
+        setupTheme()
     }
 }

@@ -41,6 +41,12 @@ class ConversationViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
+        setupTheme()
         navigationItem.title = name
+    }
+    
+    private func setupTheme() {
+        let theme = ThemeManager.getTheme()
+        tableView.backgroundColor = theme.backgroundColor
     }
 }

@@ -26,6 +26,7 @@ class ProfileViewController: UIViewController {
         setupProfilePictire()
         setupSaveButton()
         setupCloseButton()
+        setupTheme()
         super.viewDidLoad()
         Logger.log("Frame из viewDidLoad \(saveButton.frame)")
     }
@@ -97,5 +98,14 @@ class ProfileViewController: UIViewController {
         closeButton.clipsToBounds = true
         closeButton.contentMode = .scaleAspectFill
         closeButton.setBackgroundImage(UIImage(named: "cancel.png"), for: .normal)
+    }
+    
+    private func setupTheme() {
+        let theme = ThemeManager.getTheme()
+        navigationController?.navigationBar.barTintColor = theme.backgroundColor
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: theme.textColor]
+        view.backgroundColor = theme.backgroundColor
+        nameLabel.textColor = theme.textColor
+        professionLabel.textColor = theme.textColor
     }
 }
