@@ -64,12 +64,21 @@ enum Theme: String {
 }
 
 class ThemeManager {
-    static func getTheme() -> Theme {
-        let themeName = UserDefaults.standard.string(forKey: "Theme")
-        return Theme.getTheme(themeName)
+    
+    private var current: Theme?
+    
+    func getTheme() -> Theme {
+        if let theme = current {
+            return theme
+        } else {
+            let themeName = UserDefaults.standard.string(forKey: "Theme")
+            let userDefaultTheme = Theme.getTheme(themeName)
+            current = userDefaultTheme
+            return userDefaultTheme
+        }
     }
     
-    static func saveTheme(_ theme: Theme){
+    func saveTheme(_ theme: Theme){
         UserDefaults.standard.set(theme.rawValue, forKey: "Theme")
     }
 }

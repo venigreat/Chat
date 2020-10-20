@@ -14,9 +14,6 @@
         <array key="SF Pro Text Regular.ttf">
             <string>SFProText-Regular</string>
         </array>
-        <array key="SFProDisplay-Bold.ttf">
-            <string>SFProDisplay-Bold</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Chat-->
@@ -86,55 +83,6 @@
                                     <action selector="tapClassicButton:" destination="vyS-Qs-PVH" eventType="touchUpInside" id="JZC-7f-fpz"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" id="uA9-rj-SeF">
-                                <rect key="frame" x="106.21440437086449" y="210" width="200" height="93.333333333333258"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etG-Sh-Kwd">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7k-UZ-BUL">
-                                                <rect key="frame" x="8" y="8" width="101" height="19"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RGF-7c-NpA">
-                                                <rect key="frame" x="91" y="33" width="101" height="19"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="6Wi-db-lpY"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8c-Qb-Ykt">
-                                        <rect key="frame" x="65.333333333333343" y="67" width="69.333333333333343" height="26.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="etG-Sh-Kwd" firstAttribute="top" secondItem="uA9-rj-SeF" secondAttribute="top" id="2vq-tk-BnV"/>
-                                    <constraint firstAttribute="trailing" secondItem="etG-Sh-Kwd" secondAttribute="trailing" id="Vok-vU-CEi"/>
-                                    <constraint firstItem="etG-Sh-Kwd" firstAttribute="leading" secondItem="uA9-rj-SeF" secondAttribute="leading" id="bER-gP-UTB"/>
-                                </constraints>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy4-xC-nkY">
                                 <rect key="frame" x="106" y="362" width="200" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -146,55 +94,6 @@
                                     <action selector="tapDayButton:" destination="vyS-Qs-PVH" eventType="touchUpInside" id="4MD-np-VXe"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" id="qax-l1-x9o">
-                                <rect key="frame" x="106" y="360" width="200" height="93.333333333333258"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpR-Na-053">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BLo-bz-suk">
-                                                <rect key="frame" x="8" y="8" width="101" height="19"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nlm-3X-JmR">
-                                                <rect key="frame" x="91" y="33" width="101" height="19"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="KM2-xM-QD1"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyD-fq-jV6">
-                                        <rect key="frame" x="81" y="67" width="38" height="26.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="HpR-Na-053" secondAttribute="trailing" id="Ko8-HF-5yZ"/>
-                                    <constraint firstItem="HpR-Na-053" firstAttribute="top" secondItem="qax-l1-x9o" secondAttribute="top" id="Nat-xv-4JT"/>
-                                    <constraint firstItem="HpR-Na-053" firstAttribute="leading" secondItem="qax-l1-x9o" secondAttribute="leading" id="a44-Jd-bRe"/>
-                                </constraints>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZh-Z2-5KZ">
                                 <rect key="frame" x="106.59674080498507" y="502" width="200" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -206,55 +105,6 @@
                                     <action selector="tapNightButton:" destination="vyS-Qs-PVH" eventType="touchUpInside" id="3tq-lo-wpR"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" id="xSN-Hg-uHM">
-                                <rect key="frame" x="106.59674080498507" y="500" width="200" height="93.333333333333485"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3o-EI-RFa">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKk-ft-RWc">
-                                                <rect key="frame" x="8" y="8" width="101" height="19"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBv-NP-yDr">
-                                                <rect key="frame" x="91" y="33" width="101" height="19"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="Gss-3P-VsG"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4z-jz-P1h">
-                                        <rect key="frame" x="74" y="67" width="52.333333333333343" height="26.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="M3o-EI-RFa" firstAttribute="top" secondItem="xSN-Hg-uHM" secondAttribute="top" id="HNC-of-vBo"/>
-                                    <constraint firstItem="M3o-EI-RFa" firstAttribute="leading" secondItem="xSN-Hg-uHM" secondAttribute="leading" id="WYI-CV-zPB"/>
-                                    <constraint firstAttribute="trailing" secondItem="M3o-EI-RFa" secondAttribute="trailing" id="cs1-Mz-9q1"/>
-                                </constraints>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.050657756665753388" green="0.0" blue="0.31197895684794524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="KoC-cG-bmD"/>
@@ -266,6 +116,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="classicButton" destination="4AC-dD-XE6" id="dD7-nc-fRL"/>
+                        <outlet property="dayButton" destination="Vy4-xC-nkY" id="44A-1J-ddk"/>
+                        <outlet property="nightButton" destination="WZh-Z2-5KZ" id="s55-FE-Wf4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B20-rc-3EM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -338,26 +193,28 @@
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="19"/>
                                 <state key="normal" title="Edit"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deG-1d-3KO">
-                                <rect key="frame" x="87" y="342" width="240" height="28"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TextField" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vmh-Dm-is8">
+                                <rect key="frame" x="159" y="338" width="97" height="34"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iMG-ho-cv6" firstAttribute="trailing" secondItem="YsR-UK-0kq" secondAttribute="trailing" constant="56" id="26E-Nx-xtA"/>
-                            <constraint firstItem="deG-1d-3KO" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" constant="87" id="3Ar-fj-qd1"/>
                             <constraint firstItem="MW4-Ya-htR" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" priority="200" constant="87" id="B9h-kr-nXK"/>
-                            <constraint firstItem="deG-1d-3KO" firstAttribute="top" secondItem="MW4-Ya-htR" secondAttribute="bottom" priority="200" constant="32" id="F0r-Dq-3f0"/>
+                            <constraint firstItem="qiV-KC-ybo" firstAttribute="top" secondItem="Vmh-Dm-is8" secondAttribute="bottom" constant="30" id="BQQ-PX-Yv7"/>
+                            <constraint firstItem="Vmh-Dm-is8" firstAttribute="top" secondItem="MW4-Ya-htR" secondAttribute="bottom" constant="28" id="BUN-Eq-H1m"/>
                             <constraint firstItem="YsR-UK-0kq" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" constant="56" id="Hfg-kd-65s"/>
                             <constraint firstItem="qiV-KC-ybo" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" constant="87" id="J46-nh-frU"/>
-                            <constraint firstItem="qiV-KC-ybo" firstAttribute="top" secondItem="deG-1d-3KO" secondAttribute="bottom" constant="32" id="OZH-l3-jTy"/>
                             <constraint firstItem="iMG-ho-cv6" firstAttribute="bottom" secondItem="YsR-UK-0kq" secondAttribute="bottom" constant="30" id="RF6-gQ-omh"/>
                             <constraint firstItem="iMG-ho-cv6" firstAttribute="trailing" secondItem="qiV-KC-ybo" secondAttribute="trailing" constant="87" id="YOQ-54-vjU"/>
+                            <constraint firstItem="iMG-ho-cv6" firstAttribute="trailing" secondItem="Vmh-Dm-is8" secondAttribute="trailing" constant="158" id="kHM-lG-s39"/>
                             <constraint firstItem="MW4-Ya-htR" firstAttribute="top" secondItem="iMG-ho-cv6" secondAttribute="top" constant="14" id="tDR-1c-fye"/>
-                            <constraint firstItem="iMG-ho-cv6" firstAttribute="trailing" secondItem="deG-1d-3KO" secondAttribute="trailing" constant="87" id="uWB-GR-UQq"/>
+                            <constraint firstItem="Vmh-Dm-is8" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" constant="159" id="wre-Pf-0AN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iMG-ho-cv6"/>
                     </view>
@@ -375,7 +232,7 @@
                     <connections>
                         <outlet property="closeButton" destination="ZjA-bc-VbE" id="T73-2e-2NI"/>
                         <outlet property="firstLetterLabel" destination="yLk-Oo-Bam" id="a4Y-ZB-wYQ"/>
-                        <outlet property="nameLabel" destination="deG-1d-3KO" id="h5H-is-GGf"/>
+                        <outlet property="nameTextField" destination="Vmh-Dm-is8" id="bKc-dE-ppX"/>
                         <outlet property="professionLabel" destination="qiV-KC-ybo" id="FC2-QE-P0e"/>
                         <outlet property="profileButton" destination="MW4-Ya-htR" id="5kY-z2-SMg"/>
                         <outlet property="saveButton" destination="YsR-UK-0kq" id="Uyn-kR-cCa"/>

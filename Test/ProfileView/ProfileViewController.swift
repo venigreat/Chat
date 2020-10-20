@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var profileButton: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var professionLabel: UILabel!
     @IBOutlet weak var firstLetterLabel: UILabel!
     @IBOutlet weak var secondLetterLabel: UILabel!
@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController {
     //MARK: - Private
     
     private func setupLabels() {
-        nameLabel.text = "Belyaev Andrey"
+        nameTextField.text = "Belyaev Andrey"
         professionLabel.numberOfLines = 2
         professionLabel.text = "Very long profession Very long profession Very long profession Very long profession"
     }
@@ -83,7 +83,7 @@ class ProfileViewController: UIViewController {
     }
     
     private func setBigLetters() {
-        if let userName = nameLabel.text {
+        if let userName = nameTextField.text {
             firstLetterLabel.text = String(userName.prefix(1))
             let nameArray = userName.split(separator: " ")
             secondLetterLabel.text = String(nameArray[1].prefix(1))
@@ -101,11 +101,11 @@ class ProfileViewController: UIViewController {
     }
     
     private func setupTheme() {
-        let theme = ThemeManager.getTheme()
+        let theme = ThemeManager().getTheme()
         navigationController?.navigationBar.barTintColor = theme.backgroundColor
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: theme.textColor]
         view.backgroundColor = theme.backgroundColor
-        nameLabel.textColor = theme.textColor
+        nameTextField.textColor = theme.textColor
         professionLabel.textColor = theme.textColor
     }
 }

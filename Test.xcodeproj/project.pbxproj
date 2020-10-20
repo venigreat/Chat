@@ -19,6 +19,10 @@
 		F36C9191251C787800EB79DF /* UIApplication-State+StringValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C9190251C787800EB79DF /* UIApplication-State+StringValue.swift */; };
 		F36C9197251C82AD00EB79DF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C9196251C82AD00EB79DF /* CustomButton.swift */; };
 		F36DE6A8252C67DB009EDEF6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36DE6A7252C67DB009EDEF6 /* DataManager.swift */; };
+		F3701B40253B5DB800C88626 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3701B3F253B5DB800C88626 /* PaddingLabel.swift */; };
+		F3701B44253C276300C88626 /* ThemeButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3701B42253C276300C88626 /* ThemeButtonView.xib */; };
+		F3701B46253C295F00C88626 /* ThemesButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3701B45253C295F00C88626 /* ThemesButtonView.swift */; };
+		F3701B48253EFABE00C88626 /* String+Uppercase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3701B47253EFABE00C88626 /* String+Uppercase.swift */; };
 		F37075FD251F61E900A9F8D1 /* ConversationCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37075FC251F61E900A9F8D1 /* ConversationCellModel.swift */; };
 		F37076012520E71000A9F8D1 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37076002520E71000A9F8D1 /* DateFormatter.swift */; };
 		F3877E4A251531A400114A68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3877E49251531A400114A68 /* AppDelegate.swift */; };
@@ -69,6 +73,10 @@
 		F36C9190251C787800EB79DF /* UIApplication-State+StringValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication-State+StringValue.swift"; sourceTree = "<group>"; };
 		F36C9196251C82AD00EB79DF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F36DE6A7252C67DB009EDEF6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		F3701B3F253B5DB800C88626 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		F3701B42253C276300C88626 /* ThemeButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeButtonView.xib; sourceTree = "<group>"; };
+		F3701B45253C295F00C88626 /* ThemesButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesButtonView.swift; sourceTree = "<group>"; };
+		F3701B47253EFABE00C88626 /* String+Uppercase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Uppercase.swift"; sourceTree = "<group>"; };
 		F37075FC251F61E900A9F8D1 /* ConversationCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCellModel.swift; sourceTree = "<group>"; };
 		F37076002520E71000A9F8D1 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		F3877E46251531A400114A68 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +169,7 @@
 			children = (
 				F36C9190251C787800EB79DF /* UIApplication-State+StringValue.swift */,
 				F36B565D2528693500177FB9 /* Date+Difference.swift */,
+				F3701B47253EFABE00C88626 /* String+Uppercase.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				F36C9196251C82AD00EB79DF /* CustomButton.swift */,
+				F3701B3F253B5DB800C88626 /* PaddingLabel.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -288,6 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				F3F0C9B7252E23FE00104EE0 /* ThemesViewController.swift */,
+				F3701B42253C276300C88626 /* ThemeButtonView.xib */,
+				F3701B45253C295F00C88626 /* ThemesButtonView.swift */,
 			);
 			path = ThemesView;
 			sourceTree = "<group>";
@@ -398,6 +410,7 @@
 			files = (
 				F3C8424A251924EB00DF050B /* Roboto-Regular.ttf in Resources */,
 				F3877E56251531A500114A68 /* LaunchScreen.storyboard in Resources */,
+				F3701B44253C276300C88626 /* ThemeButtonView.xib in Resources */,
 				F3877E53251531A500114A68 /* Assets.xcassets in Resources */,
 				F3877E51251531A400114A68 /* Main.storyboard in Resources */,
 				F36B56582527583800177FB9 /* MessageCell.xib in Resources */,
@@ -442,11 +455,14 @@
 				F36C9197251C82AD00EB79DF /* CustomButton.swift in Sources */,
 				F36DE6A8252C67DB009EDEF6 /* DataManager.swift in Sources */,
 				F3877E7A25153E4200114A68 /* Logger.swift in Sources */,
+				F3701B48253EFABE00C88626 /* String+Uppercase.swift in Sources */,
 				F3C8424D2519E19F00DF050B /* ImagePickerManager.swift in Sources */,
 				F36A74E02523578E001CCCF4 /* ConversationsCell.swift in Sources */,
 				F366052C2524ACFA006B4EA3 /* ConfigurableView.swift in Sources */,
+				F3701B40253B5DB800C88626 /* PaddingLabel.swift in Sources */,
 				F36605372524C249006B4EA3 /* MessageCellModel.swift in Sources */,
 				F36C9191251C787800EB79DF /* UIApplication-State+StringValue.swift in Sources */,
+				F3701B46253C295F00C88626 /* ThemesButtonView.swift in Sources */,
 				F37075FD251F61E900A9F8D1 /* ConversationCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

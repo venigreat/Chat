@@ -14,19 +14,28 @@ protocol ChangeThemeDelegate: class {
 
 class ThemesViewController: UIViewController {
     
+    @IBOutlet weak var classicButton: UIButton!
+    @IBOutlet weak var dayButton: UIButton!
+    @IBOutlet weak var nightButton: UIButton!
+    var classicButtonView: ThemesButtonView?
+    var dayButtonView: ThemesButtonView?
+    var nightButtonView: ThemesButtonView?
     weak var delegate: ChangeThemeDelegate?
     // без weak - две сильные ссылки на объекты
+    var themeManager = ThemeManager()
     var previousTheme: Theme = .classic
     var callback: (() -> ())?
     
     override func viewDidLoad() {
-        previousTheme = ThemeManager.getTheme()
+        previousTheme = themeManager.getTheme()
+        configureThemeButtons()
         super.viewDidLoad()
     }
     
     @IBAction func tapCancelButton(_ sender: Any) {
-        ThemeManager.saveTheme(previousTheme)
+        themeManager.saveTheme(previousTheme)
         delegate?.changeTheme(sender: sender)
+        refreshButtons()
         navigationController?.popViewController(animated: true)
     }
     
@@ -42,8 +51,31 @@ class ThemesViewController: UIViewController {
     }
     
     private func changeTheme(_ theme: Theme, _ sender: Any) {
-        ThemeManager.saveTheme(theme)
+        themeManager.saveTheme(theme)
+        refreshButtons()
 //        callback?()
         delegate?.changeTheme(sender: sender)
+    }
+    
+    private func configureThemeButtons() {
+        classicButtonView = ThemesButtonView(x: classicButton.frame.minX, y: classicButton.frame.minY, theme: .classic)
+        dayButtonView = ThemesButtonView(x: dayButton.frame.minX, y: dayButton.frame.minY, theme: .day)
+        nightButtonView = ThemesButtonView(x: nightButton.frame.minX, y: nightButton.frame.minY, theme: .night)
+        let viewArray = [classicButtonView, dayButtonView, nightButtonView]
+        for buttonView in viewArray {
+            if let buttonView = buttonView {
+                buttonView.isUserInteractionEnabled = false
+                view.addSubview(buttonView)
+            }
+        }
+    }
+    
+    private func refreshButtons() {
+        let viewArray = [classicButtonView, dayButtonView, nightButtonView]
+        for view in viewArray {
+            if let view = view {
+                view.setBorder()
+            }
+        }
     }
 }

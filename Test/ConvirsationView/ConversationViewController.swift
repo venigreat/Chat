@@ -46,7 +46,7 @@ class ConversationViewController: UIViewController, UITableViewDataSource {
     }
     
     private func setupTheme() {
-        let theme = ThemeManager.getTheme()
+        let theme = ThemeManager().getTheme()
         tableView.backgroundColor = theme.backgroundColor
     }
 }

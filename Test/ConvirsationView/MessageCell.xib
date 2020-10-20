@@ -17,8 +17,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="373" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Aj-YS-AAt">
-                        <rect key="frame" x="29" y="12" width="61.5" height="65"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Aj-YS-AAt" customClass="PaddingLabel" customModule="Test" customModuleProvider="target">
+                        <rect key="frame" x="29" y="12" width="243" height="65"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f04-iR-Kvh" customClass="PaddingLabel" customModule="Test" customModuleProvider="target">
+                        <rect key="frame" x="100" y="12" width="248" height="65"/>
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                         <nil key="textColor"/>
@@ -26,19 +33,22 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Aj-YS-AAt" secondAttribute="trailing" priority="200" constant="29" id="EXR-Ds-FFW"/>
-                    <constraint firstAttribute="bottom" secondItem="8Aj-YS-AAt" secondAttribute="bottom" constant="12" id="KHH-xQ-wbb"/>
+                    <constraint firstItem="f04-iR-Kvh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="2dc-nR-n1e"/>
+                    <constraint firstAttribute="trailing" secondItem="f04-iR-Kvh" secondAttribute="trailing" constant="25" id="6ao-g8-xdG"/>
+                    <constraint firstAttribute="bottom" secondItem="f04-iR-Kvh" secondAttribute="bottom" constant="12" id="T8N-AO-zpa"/>
+                    <constraint firstItem="8Aj-YS-AAt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="29" id="csh-GI-EHn"/>
+                    <constraint firstItem="f04-iR-Kvh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="100" id="ePh-qR-kuq"/>
+                    <constraint firstAttribute="bottom" secondItem="8Aj-YS-AAt" secondAttribute="bottom" constant="12" id="gnF-Kf-T3b"/>
+                    <constraint firstAttribute="trailing" secondItem="8Aj-YS-AAt" secondAttribute="trailing" constant="101" id="gyN-DT-CkO"/>
                     <constraint firstItem="8Aj-YS-AAt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="kqA-Uk-kBW"/>
-                    <constraint firstItem="8Aj-YS-AAt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="200" constant="29" id="lHf-Cd-97s"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="leftConstraint" destination="lHf-Cd-97s" id="VgD-O4-Fzd"/>
                 <outlet property="messageLabel" destination="8Aj-YS-AAt" id="fEk-x2-cBR"/>
-                <outlet property="rightConstraint" destination="EXR-Ds-FFW" id="k3F-Yq-pHb"/>
+                <outlet property="myMessageLabel" destination="f04-iR-Kvh" id="niE-3d-TXC"/>
             </connections>
-            <point key="canvasLocation" x="176.08695652173915" y="144.30803571428569"/>
+            <point key="canvasLocation" x="176.08695652173915" y="143.63839285714286"/>
         </tableViewCell>
     </objects>
 </document>
