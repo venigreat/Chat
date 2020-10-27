@@ -33,10 +33,11 @@ class ThemesViewController: UIViewController {
     }
     
     @IBAction func tapCancelButton(_ sender: Any) {
-        themeManager.saveTheme(previousTheme)
-        delegate?.changeTheme(sender: sender)
-        refreshButtons()
-        navigationController?.popViewController(animated: true)
+        themeManager.saveTheme(vc: self, previousTheme) {
+            self.delegate?.changeTheme(sender: sender)
+            self.refreshButtons()
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func tapClassicButton(_ sender: Any) {
@@ -51,10 +52,11 @@ class ThemesViewController: UIViewController {
     }
     
     private func changeTheme(_ theme: Theme, _ sender: Any) {
-        themeManager.saveTheme(theme)
-        refreshButtons()
-//        callback?()
-        delegate?.changeTheme(sender: sender)
+        themeManager.saveTheme(vc: self, theme) {
+            self.refreshButtons()
+    //        self.callback?()
+            self.delegate?.changeTheme(sender: sender)
+        }
     }
     
     private func configureThemeButtons() {

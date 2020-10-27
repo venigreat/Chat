@@ -71,14 +71,14 @@ class ThemeManager {
         if let theme = current {
             return theme
         } else {
-            let themeName = UserDefaults.standard.string(forKey: "Theme")
+            let themeName = ResoucesManager().read(fileName: .theme)// UserDefaults.standard.string(forKey: "Theme")
             let userDefaultTheme = Theme.getTheme(themeName)
             current = userDefaultTheme
             return userDefaultTheme
         }
     }
     
-    func saveTheme(_ theme: Theme){
-        UserDefaults.standard.set(theme.rawValue, forKey: "Theme")
+    func saveTheme(vc: UIViewController, _ theme: Theme, closure: @escaping () -> Void) {
+        GCDManager().saveTheme(vc: vc, theme: theme, closure: closure)
     }
 }

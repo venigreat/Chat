@@ -134,7 +134,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MW4-Ya-htR" customClass="UIImageView">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MW4-Ya-htR" customClass="UIImageView">
                                 <rect key="frame" x="87" y="70" width="240" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLk-Oo-Bam">
@@ -178,12 +178,6 @@
                                     <constraint firstItem="yLk-Oo-Bam" firstAttribute="top" secondItem="MW4-Ya-htR" secondAttribute="top" constant="50" id="xYn-oB-rQb"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiV-KC-ybo">
-                                <rect key="frame" x="87" y="402" width="240" height="19.333333333333314"/>
-                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsR-UK-0kq" customClass="CustomButton" customModule="Test" customModuleProvider="target">
                                 <rect key="frame" x="56" y="738" width="302" height="40"/>
                                 <color key="backgroundColor" red="0.96463197469711304" green="0.96474748849868774" blue="0.96459275484085083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -192,29 +186,59 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="19"/>
                                 <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="tapEditButton:" destination="Ogs-AO-Wq4" eventType="touchUpInside" id="GjE-p0-ppG"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TextField" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vmh-Dm-is8">
-                                <rect key="frame" x="159" y="338" width="97" height="34"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TextField" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Vmh-Dm-is8">
+                                <rect key="frame" x="87" y="333" width="240" height="31.666666666666686"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameTextFieldChange:" destination="Ogs-AO-Wq4" eventType="editingChanged" id="YCk-t7-MrP"/>
+                                </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKh-yh-Pbs" customClass="CustomButton" customModule="Test" customModuleProvider="target">
+                                <rect key="frame" x="44" y="726" width="151" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96463197469999995" green="0.96474748850000003" blue="0.96459275479999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="19"/>
+                                <state key="normal" title="GCD"/>
+                                <connections>
+                                    <action selector="tapGcdButton:" destination="Ogs-AO-Wq4" eventType="touchUpInside" id="ZDA-5P-m4a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIR-lI-eSD" customClass="CustomButton" customModule="Test" customModuleProvider="target">
+                                <rect key="frame" x="220" y="726" width="151" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96463197469999995" green="0.96474748850000003" blue="0.96459275479999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="19"/>
+                                <state key="normal" title="Operation"/>
+                                <connections>
+                                    <action selector="tapOperationsButton:" destination="Ogs-AO-Wq4" eventType="touchUpInside" id="Y66-DH-obb"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="Textview" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p3m-y5-w3f">
+                                <rect key="frame" x="87" y="397" width="240" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iMG-ho-cv6" firstAttribute="trailing" secondItem="YsR-UK-0kq" secondAttribute="trailing" constant="56" id="26E-Nx-xtA"/>
                             <constraint firstItem="MW4-Ya-htR" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" priority="200" constant="87" id="B9h-kr-nXK"/>
-                            <constraint firstItem="qiV-KC-ybo" firstAttribute="top" secondItem="Vmh-Dm-is8" secondAttribute="bottom" constant="30" id="BQQ-PX-Yv7"/>
-                            <constraint firstItem="Vmh-Dm-is8" firstAttribute="top" secondItem="MW4-Ya-htR" secondAttribute="bottom" constant="28" id="BUN-Eq-H1m"/>
                             <constraint firstItem="YsR-UK-0kq" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" constant="56" id="Hfg-kd-65s"/>
-                            <constraint firstItem="qiV-KC-ybo" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" constant="87" id="J46-nh-frU"/>
+                            <constraint firstItem="iMG-ho-cv6" firstAttribute="trailing" secondItem="Vmh-Dm-is8" secondAttribute="trailing" constant="87" id="Kho-Ij-DUW"/>
+                            <constraint firstItem="Vmh-Dm-is8" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" constant="87" id="QBL-3e-CXe"/>
                             <constraint firstItem="iMG-ho-cv6" firstAttribute="bottom" secondItem="YsR-UK-0kq" secondAttribute="bottom" constant="30" id="RF6-gQ-omh"/>
-                            <constraint firstItem="iMG-ho-cv6" firstAttribute="trailing" secondItem="qiV-KC-ybo" secondAttribute="trailing" constant="87" id="YOQ-54-vjU"/>
-                            <constraint firstItem="iMG-ho-cv6" firstAttribute="trailing" secondItem="Vmh-Dm-is8" secondAttribute="trailing" constant="158" id="kHM-lG-s39"/>
+                            <constraint firstItem="Vmh-Dm-is8" firstAttribute="top" secondItem="MW4-Ya-htR" secondAttribute="bottom" constant="23" id="oIv-kP-Sq1"/>
                             <constraint firstItem="MW4-Ya-htR" firstAttribute="top" secondItem="iMG-ho-cv6" secondAttribute="top" constant="14" id="tDR-1c-fye"/>
-                            <constraint firstItem="Vmh-Dm-is8" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" constant="159" id="wre-Pf-0AN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iMG-ho-cv6"/>
                     </view>
@@ -231,17 +255,19 @@
                     </navigationItem>
                     <connections>
                         <outlet property="closeButton" destination="ZjA-bc-VbE" id="T73-2e-2NI"/>
+                        <outlet property="editButton" destination="YsR-UK-0kq" id="Uyn-kR-cCa"/>
                         <outlet property="firstLetterLabel" destination="yLk-Oo-Bam" id="a4Y-ZB-wYQ"/>
+                        <outlet property="gcdButton" destination="nKh-yh-Pbs" id="1GG-Sk-5kS"/>
                         <outlet property="nameTextField" destination="Vmh-Dm-is8" id="bKc-dE-ppX"/>
-                        <outlet property="professionLabel" destination="qiV-KC-ybo" id="FC2-QE-P0e"/>
+                        <outlet property="operationButton" destination="dIR-lI-eSD" id="dVt-9V-zkp"/>
+                        <outlet property="professionTextView" destination="p3m-y5-w3f" id="v4g-Iy-Qan"/>
                         <outlet property="profileButton" destination="MW4-Ya-htR" id="5kY-z2-SMg"/>
-                        <outlet property="saveButton" destination="YsR-UK-0kq" id="Uyn-kR-cCa"/>
                         <outlet property="secondLetterLabel" destination="ftB-7r-iCm" id="9ji-Qr-Cwt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dU6-0o-w5w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2431.8840579710145" y="-706.47321428571422"/>
+            <point key="canvasLocation" x="2430.434782608696" y="-706.47321428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Owg-TT-e3V">
