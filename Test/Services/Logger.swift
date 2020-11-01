@@ -11,7 +11,7 @@ import UIKit
 
 class Logger {
     
-    //MARK: - Public
+    // MARK: - Public
     
     static func log(_ message: String) {
         self.log(string: message)
@@ -20,7 +20,7 @@ class Logger {
         self.log(string: "Application moved from \(firstState) to \(secondState): \(method)")
     }
     
-    //MARK: - Private
+    // MARK: - Private
     
     private static func log(string: String) {
         #if DEBUG

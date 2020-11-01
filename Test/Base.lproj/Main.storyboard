@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Chat-->
+        <!--Channels-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ConversationsListViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,17 +26,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Chat" id="ick-Gc-dWp">
+                    <navigationItem key="navigationItem" title="Channels" id="ick-Gc-dWp">
                         <barButtonItem key="leftBarButtonItem" image="settings" id="Kq7-pj-3oZ">
                             <connections>
                                 <action selector="tapThemesButton:" destination="BYZ-38-t0r" id="ZGR-5W-QiN"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="man-with-short-hair-profile-avatar" id="MhE-Oj-e15">
-                            <connections>
-                                <segue destination="CN1-h8-pYf" kind="presentation" id="udP-qJ-JTW"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="man-with-short-hair-profile-avatar" id="MhE-Oj-e15">
+                                <connections>
+                                    <segue destination="CN1-h8-pYf" kind="presentation" id="udP-qJ-JTW"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="plus" id="152-pZ-nSM">
+                                <connections>
+                                    <action selector="tapAddChanelButton:" destination="BYZ-38-t0r" id="oEb-Jq-H53"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <segue destination="x50-k0-GHG" kind="show" identifier="Conversation" id="Ibq-A5-gcM"/>
@@ -200,24 +207,16 @@
                                     <action selector="nameTextFieldChange:" destination="Ogs-AO-Wq4" eventType="editingChanged" id="YCk-t7-MrP"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKh-yh-Pbs" customClass="CustomButton" customModule="Test" customModuleProvider="target">
-                                <rect key="frame" x="44" y="726" width="151" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKh-yh-Pbs" customClass="CustomButton" customModule="Test" customModuleProvider="target">
+                                <rect key="frame" x="44" y="743" width="147" height="35"/>
                                 <color key="backgroundColor" red="0.96463197469999995" green="0.96474748850000003" blue="0.96459275479999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nKh-yh-Pbs" secondAttribute="height" multiplier="21:5" id="VHn-SZ-Rl9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="19"/>
                                 <state key="normal" title="GCD"/>
                                 <connections>
                                     <action selector="tapGcdButton:" destination="Ogs-AO-Wq4" eventType="touchUpInside" id="ZDA-5P-m4a"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIR-lI-eSD" customClass="CustomButton" customModule="Test" customModuleProvider="target">
-                                <rect key="frame" x="220" y="726" width="151" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.96463197469999995" green="0.96474748850000003" blue="0.96459275479999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="19"/>
-                                <state key="normal" title="Operation"/>
-                                <connections>
-                                    <action selector="tapOperationsButton:" destination="Ogs-AO-Wq4" eventType="touchUpInside" id="Y66-DH-obb"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="Textview" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p3m-y5-w3f">
@@ -228,15 +227,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIR-lI-eSD" customClass="CustomButton" customModule="Test" customModuleProvider="target">
+                                <rect key="frame" x="238" y="743" width="135" height="35"/>
+                                <color key="backgroundColor" red="0.96463197469999995" green="0.96474748850000003" blue="0.96459275479999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dIR-lI-eSD" secondAttribute="height" multiplier="27:7" id="jDA-Cg-qcI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="19"/>
+                                <state key="normal" title="Operation"/>
+                                <connections>
+                                    <action selector="tapOperationsButton:" destination="Ogs-AO-Wq4" eventType="touchUpInside" id="Y66-DH-obb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iMG-ho-cv6" firstAttribute="trailing" secondItem="YsR-UK-0kq" secondAttribute="trailing" constant="56" id="26E-Nx-xtA"/>
                             <constraint firstItem="MW4-Ya-htR" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" priority="200" constant="87" id="B9h-kr-nXK"/>
                             <constraint firstItem="YsR-UK-0kq" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" constant="56" id="Hfg-kd-65s"/>
+                            <constraint firstItem="dIR-lI-eSD" firstAttribute="leading" secondItem="nKh-yh-Pbs" secondAttribute="trailing" constant="47" id="JZh-ZV-Nba"/>
                             <constraint firstItem="iMG-ho-cv6" firstAttribute="trailing" secondItem="Vmh-Dm-is8" secondAttribute="trailing" constant="87" id="Kho-Ij-DUW"/>
                             <constraint firstItem="Vmh-Dm-is8" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" constant="87" id="QBL-3e-CXe"/>
                             <constraint firstItem="iMG-ho-cv6" firstAttribute="bottom" secondItem="YsR-UK-0kq" secondAttribute="bottom" constant="30" id="RF6-gQ-omh"/>
+                            <constraint firstItem="iMG-ho-cv6" firstAttribute="bottom" secondItem="dIR-lI-eSD" secondAttribute="bottom" constant="30" id="SEb-Cf-VXC"/>
+                            <constraint firstItem="iMG-ho-cv6" firstAttribute="trailing" secondItem="dIR-lI-eSD" secondAttribute="trailing" constant="41" id="g1z-h2-0Oc"/>
+                            <constraint firstItem="iMG-ho-cv6" firstAttribute="bottom" secondItem="nKh-yh-Pbs" secondAttribute="bottom" constant="30" id="j2S-e5-veU"/>
+                            <constraint firstItem="nKh-yh-Pbs" firstAttribute="leading" secondItem="iMG-ho-cv6" secondAttribute="leading" constant="44" id="mNi-sa-Pry"/>
                             <constraint firstItem="Vmh-Dm-is8" firstAttribute="top" secondItem="MW4-Ya-htR" secondAttribute="bottom" constant="23" id="oIv-kP-Sq1"/>
                             <constraint firstItem="MW4-Ya-htR" firstAttribute="top" secondItem="iMG-ho-cv6" secondAttribute="top" constant="14" id="tDR-1c-fye"/>
                         </constraints>
@@ -309,6 +325,7 @@
     </scenes>
     <resources>
         <image name="man-with-short-hair-profile-avatar" width="29" height="29"/>
+        <image name="plus" width="44" height="44"/>
         <image name="settings" width="32" height="32"/>
     </resources>
 </document>

@@ -1,6 +1,7 @@
 Build
 DerivedData
 xcuserdata
+Pods
 
 *.xcscmblueprint
 *.xccheckout

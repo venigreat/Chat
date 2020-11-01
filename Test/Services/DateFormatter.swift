@@ -26,6 +26,14 @@ class Formatter {
         return getTimeCommon(from: date, dateFormat: "dd/MMM")
     }
     
+    static func getDateOrTime(from date: Date) -> String {
+        if Date().hours(from: date) > 24 {
+             return Formatter.getDate(from: date)
+        } else {
+             return Formatter.getTime(from: date)
+        }
+    }
+    
     // MARK: - Private
     
     static private func getTimeCommon(from date: Date, dateFormat: String) -> String {

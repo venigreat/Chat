@@ -11,44 +11,73 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="89" id="KGk-i7-Jjw" customClass="MessageCell" customModule="Test" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="373" height="89"/>
+            <rect key="frame" x="0.0" y="0.0" width="373" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="373" height="89"/>
+                <rect key="frame" x="0.0" y="0.0" width="373" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Aj-YS-AAt" customClass="PaddingLabel" customModule="Test" customModuleProvider="target">
-                        <rect key="frame" x="29" y="12" width="243" height="65"/>
+                        <rect key="frame" x="29" y="42" width="243" height="66"/>
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f04-iR-Kvh" customClass="PaddingLabel" customModule="Test" customModuleProvider="target">
-                        <rect key="frame" x="100" y="12" width="248" height="65"/>
+                        <rect key="frame" x="100" y="42" width="248" height="66"/>
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9N-PY-74Q">
+                        <rect key="frame" x="29" y="13" width="253" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="CRb-SS-KGO"/>
+                            <constraint firstAttribute="width" constant="253" id="Mkm-II-PiE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKJ-E4-nqA">
+                        <rect key="frame" x="293" y="13" width="60" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="LTp-4B-an2"/>
+                            <constraint firstAttribute="height" constant="21" id="s8L-HS-Ch8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="f04-iR-Kvh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="2dc-nR-n1e"/>
+                    <constraint firstItem="f04-iR-Kvh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="42" id="2dc-nR-n1e"/>
                     <constraint firstAttribute="trailing" secondItem="f04-iR-Kvh" secondAttribute="trailing" constant="25" id="6ao-g8-xdG"/>
+                    <constraint firstAttribute="trailing" secondItem="pKJ-E4-nqA" secondAttribute="trailing" constant="20" id="8aW-8M-aYJ"/>
+                    <constraint firstItem="e9N-PY-74Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="NBM-ph-1za"/>
                     <constraint firstAttribute="bottom" secondItem="f04-iR-Kvh" secondAttribute="bottom" constant="12" id="T8N-AO-zpa"/>
+                    <constraint firstItem="pKJ-E4-nqA" firstAttribute="leading" secondItem="e9N-PY-74Q" secondAttribute="trailing" constant="11" id="TER-1n-zgr"/>
+                    <constraint firstItem="f04-iR-Kvh" firstAttribute="top" secondItem="pKJ-E4-nqA" secondAttribute="bottom" constant="8" id="b0w-DI-apc"/>
                     <constraint firstItem="8Aj-YS-AAt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="29" id="csh-GI-EHn"/>
                     <constraint firstItem="f04-iR-Kvh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="100" id="ePh-qR-kuq"/>
                     <constraint firstAttribute="bottom" secondItem="8Aj-YS-AAt" secondAttribute="bottom" constant="12" id="gnF-Kf-T3b"/>
                     <constraint firstAttribute="trailing" secondItem="8Aj-YS-AAt" secondAttribute="trailing" constant="101" id="gyN-DT-CkO"/>
-                    <constraint firstItem="8Aj-YS-AAt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="kqA-Uk-kBW"/>
+                    <constraint firstItem="8Aj-YS-AAt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="42" id="kqA-Uk-kBW"/>
+                    <constraint firstItem="8Aj-YS-AAt" firstAttribute="top" secondItem="e9N-PY-74Q" secondAttribute="bottom" constant="8" id="lkQ-T2-XDL"/>
+                    <constraint firstItem="pKJ-E4-nqA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="rDJ-tk-85Z"/>
+                    <constraint firstItem="e9N-PY-74Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="29" id="yg2-yo-sN0"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="authorLabel" destination="e9N-PY-74Q" id="62z-Yh-3m6"/>
+                <outlet property="dateLabel" destination="pKJ-E4-nqA" id="prm-og-mO3"/>
                 <outlet property="messageLabel" destination="8Aj-YS-AAt" id="fEk-x2-cBR"/>
                 <outlet property="myMessageLabel" destination="f04-iR-Kvh" id="niE-3d-TXC"/>
             </connections>
-            <point key="canvasLocation" x="176.08695652173915" y="143.63839285714286"/>
+            <point key="canvasLocation" x="176.08695652173915" y="143.30357142857142"/>
         </tableViewCell>
     </objects>
 </document>

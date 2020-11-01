@@ -16,21 +16,11 @@ class ConversationsCell: UITableViewCell, ConfigurableView {
     
     func configure(with model: ConversationCellModel) {
         nameLabel.text = model.name
-        messageLabel.text = (model.message != nil) ? model.message : "No messages yet"
-        if Date().hours(from: model.date) > 24 {
-            dateLabel.text = Formatter.getDate(from: model.date)
+        messageLabel.text = model.lastMessage
+        if let timeInterval = model.lastActivity {
+            dateLabel.text = Formatter.getDateOrTime(from: timeInterval.dateValue())
         } else {
-             dateLabel.text = Formatter.getTime(from: model.date)
-        }
-        if model.isOnline {
-            backgroundColor = #colorLiteral(red: 1, green: 1, blue: 0.7436857877, alpha: 1)
-        } else {
-            backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        }
-        if model.hasUnreadMessages {
-            messageLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
-        } else {
-            messageLabel.font = UIFont.systemFont(ofSize: 16.0)
+            dateLabel.text = nil
         }
     }
 }

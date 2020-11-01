@@ -8,24 +8,24 @@
 
 import UIKit
 
-struct ConversationsWithTypeList {
-    let type: String
-    let list: [ConversationCellModel]
-}
-
 class ConversationsListViewController: UIViewController {
     
     let formatter = DateFormatter()
-    let conversationList = DataManager().getChatListData()
+    var conversationList: [ConversationCellModel] = []
     let themesViewController = UIStoryboard(name: "Main", bundle: nil)
-        .instantiateViewController(withIdentifier: "themesViewController") as! ThemesViewController
-            
+        .instantiateViewController(withIdentifier: "themesViewController") as? ThemesViewController
+        ?? ThemesViewController()
 
+    var refreshControl = UIRefreshControl()
+            
     override func viewDidLoad() {
         super.viewDidLoad()
+        readFromFirebase()
         themesViewController.delegate = self
         setupTheme()
-        view.addSubview(tableView)
+        setupRepreshController()
+        tableView.addSubview(refreshControl)
+        view.addSubview(self.tableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,12 +50,12 @@ class ConversationsListViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         Logger.log(#function)
-        super.viewDidAppear(animated)
+        super.viewWillDisappear(animated)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         Logger.log(#function)
-        super.viewDidAppear(animated)
+        super.viewDidDisappear(animated)
     }
     
     private let cellIdentifier = String(describing: ConversationsCell.self)
@@ -72,7 +72,8 @@ class ConversationsListViewController: UIViewController {
         if segue.identifier == "Conversation" {
             guard let viewController = segue.destination as? ConversationViewController,
             let index = sender as? IndexPath else { return }
-            viewController.name = conversationList[index.section].list[index.row].name
+            viewController.name = conversationList[index.row].name
+            viewController.screenId = conversationList[index.row].identifier
             tableView.deselectRow(at: index, animated: true)
         }
     }
@@ -90,31 +91,54 @@ class ConversationsListViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = theme.backgroundColor
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: theme.textColor]
     }
+    
+    private func setupRepreshController() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+    }
+    
+    private func readFromFirebase() {
+        FirebaseManager.readChannels { chatsList in
+            self.conversationList = chatsList
+            self.tableView.reloadData()
+        }
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        readFromFirebase()
+        refreshControl.endRefreshing()
+    }
+    
+    @IBAction func tapAddChanelButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Add channel",
+                                      message: "Add channel with chosen title",
+                                      preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.text = "New chanel"
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            FirebaseManager.writeChannel(title: textField?.text)
+            self.readFromFirebase()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension ConversationsListViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return conversationList.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return conversationList[section].list.count
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ConversationsCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,
+                                                       for: indexPath) as? ConversationsCell else {
             return UITableViewCell()
         }
         
-        cell.configure(with: conversationList[indexPath.section].list[indexPath.row])
+        cell.configure(with: conversationList[indexPath.row])
 
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-
-        return conversationList[section].type
     }
 }
 

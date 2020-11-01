@@ -24,7 +24,7 @@ class ThemesViewController: UIViewController {
     // без weak - две сильные ссылки на объекты
     var themeManager = ThemeManager()
     var previousTheme: Theme = .classic
-    var callback: (() -> ())?
+    var callback: (() -> Void)?
     
     override func viewDidLoad() {
         previousTheme = themeManager.getTheme()

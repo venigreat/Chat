@@ -32,8 +32,7 @@ class ResoucesManager {
                 if let data = value.pngData() {
                     try data.write(to: fileURL)
                 }
-            }
-            catch {
+            } catch {
                 let alert = Alert(title: "Ошибка", message: "Ошибка сохранения изображения")
                 alert.addRepeatButton { _ in
                     self.write(vc: vc, value: value, fileName: fileName)
@@ -50,8 +49,7 @@ class ResoucesManager {
             let fileURL = dir.appendingPathComponent(fileName.rawValue)
             do {
                 try value.write(to: fileURL, atomically: true, encoding: .utf8)
-            }
-            catch {
+            } catch {
                 let alert = Alert(title: "Ошибка", message: "Ошибка сохранения изображения")
                 alert.addRepeatButton { _ in
                     self.write(vc: vc, value: value, fileName: fileName)
@@ -70,8 +68,7 @@ class ResoucesManager {
             do {
                 let text = try String(contentsOf: fileURL, encoding: .utf8)
                 return text
-            }
-            catch {
+            } catch {
                 print("ERROR READ")
             }
         }

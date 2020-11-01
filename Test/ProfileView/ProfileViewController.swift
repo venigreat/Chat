@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     let manager = ResoucesManager()
     let activityIndicator = UIActivityIndicatorView(style: .gray)
     
-    //MARK: - Public
+    // MARK: - Public
     
     override func viewDidLoad() {
         setupDefaultNames()
@@ -69,7 +69,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         saveData(manager: OperationManager(vc: self, model: profileModel))
     }
     
-    @objc func tapProfileButton(_ sender:UITapGestureRecognizer) {
+    @objc func tapProfileButton(_ sender: UITapGestureRecognizer) {
         ImagePickerManager().pickImage(self) { image in
             self.profileButton.image = image
             self.configureProfilePicture()
@@ -79,7 +79,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         checkShowSaveButtons()
     }
     
-    //MARK: - Private
+    // MARK: - Private
     
     private func setupLabels() {
         professionTextView.delegate = self
@@ -90,9 +90,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     private func setupProfileButton() {
         NSLayoutConstraint.activate([
-            profileButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            profileButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.tapProfileButton (_:)))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector (self.tapProfileButton (_:)))
         self.profileButton.addGestureRecognizer(gesture)
     }
     private func setupActivityIndicator() {
@@ -191,7 +191,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             self.editButton.isHidden = false
             self.gcdButton.isHidden = true
             self.operationButton.isHidden = true
-            self.present(Alert(title: "Загрузка успешно завершена", message: nil).alert, animated: true, completion: nil)
+            self.present(Alert(title: "Загрузка успешно завершена", message: nil).alert,
+                         animated: true,
+                         completion: nil)
         }
     }
     

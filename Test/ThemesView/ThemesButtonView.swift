@@ -20,7 +20,9 @@ class ThemesButtonView: UIStackView {
         super.init(frame: CGRect(x: x, y: y, width: 200, height: 93.5))
         distribution = .fill
         alignment = .fill
-        if let nibView = Bundle.main.loadNibNamed("ThemeButtonView", owner: self, options: nil)?.first as? ThemesButtonView {
+        if let nibView = Bundle.main.loadNibNamed("ThemeButtonView",
+                                                  owner: self,
+                                                  options: nil)?.first as? ThemesButtonView {
             addArrangedSubview(nibView)
             instanceFromNib(theme: theme)
         }
