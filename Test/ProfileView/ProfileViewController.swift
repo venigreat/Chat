@@ -23,11 +23,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     var professionBeforeEdit: String? = ""
     let manager = ResoucesManager()
     let activityIndicator = UIActivityIndicatorView(style: .gray)
+    let user = CoreDataManager.fetchUser()
     
     // MARK: - Public
     
     override func viewDidLoad() {
-        setupDefaultNames()
+//        setupDefaultNames()
         setupLabels()
         setBigLetters()
         setupProfileButton()
@@ -84,8 +85,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     private func setupLabels() {
         professionTextView.delegate = self
         nameTextField.delegate = self
-        nameTextField.text = manager.read(fileName: .title)
-        professionTextView.text = manager.read(fileName: .profession)
+        
+        nameTextField.text = user.name
+        professionTextView.text = user.profession
     }
     
     private func setupProfileButton() {
@@ -103,9 +105,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setupProfilePictire() {
-        if let image = ResoucesManager().readImage(fileName: .avatar) {
-            profileButton.image = image
-        }
+        profileButton.image = user.image
         configureProfilePicture()
     }
     
@@ -161,15 +161,16 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         professionTextView.textColor = theme.textColor
     }
     
-    private func setupDefaultNames() {
-        if !self.manager.isFileExist(file: .title) {
-            self.manager.write(vc: self, value: "My Name", fileName: .title)
-        }
-        if !self.manager.isFileExist(file: .profession) {
-            self.manager.write(vc: self, value: "My profession", fileName: .profession)
-        }
-        
-    }
+//    private func setupDefaultNames() {
+//
+//        if !manager.isFileExist(file: .title) {
+//            manager.write(vc: self, value: "My Name", fileName: .title)
+//        }
+//        if !manager.isFileExist(file: .profession) {
+//            manager.write(vc: self, value: "My profession", fileName: .profession)
+//        }
+//
+//    }
     
     private func saveData(manager: ISaveData) {
         activityIndicator.isHidden = false

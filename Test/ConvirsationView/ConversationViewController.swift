@@ -14,6 +14,8 @@ class ConversationViewController: UIViewController, UITableViewDataSource {
     var name: String = "Nobody"
     var screenId: String = ""
     var messagesList: [MessageCellModel] = []
+    var user = ProfileModel(name: nil, profession: nil, image: nil)
+    
     
     private let cellIdentifier = String(describing: MessageCell.self)
     
@@ -32,6 +34,7 @@ class ConversationViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         view.addSubview(tableView)
+        user = CoreDataManager.fetchUser()
         setupTheme()
 
         FirebaseManager.readMessages(screenId: screenId) { messages in
@@ -80,7 +83,7 @@ class ConversationViewController: UIViewController, UITableViewDataSource {
         let message = MessageCellModel(content: textField.text ?? "",
                               created: Date(),
                               senderId: UUIDGenerator.uuid,
-                              senderName: ResoucesManager().read(fileName: .title) ?? "Anon")
+                              senderName: user.name ?? "Anon")
         FirebaseManager.writeMessage(screenId: screenId, message)
         messagesList.append(message)
         tableView.reloadData()

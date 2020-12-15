@@ -105,7 +105,6 @@ class ConversationsListViewController: UIViewController {
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        readFromFirebase()
         refreshControl.endRefreshing()
     }
     
@@ -119,7 +118,6 @@ class ConversationsListViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]
             FirebaseManager.writeChannel(title: textField?.text)
-            self.readFromFirebase()
         }))
         self.present(alert, animated: true, completion: nil)
     }

@@ -43,6 +43,12 @@
 		F393345F25349AE3006D4897 /* ThemesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F393345E25349AE3006D4897 /* ThemesManager.swift */; };
 		F39646892518D4640072DACD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39646882518D4640072DACD /* ProfileViewController.swift */; };
 		F39E09AE2549BDD700069DC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F39E09AD2549BDD600069DC7 /* GoogleService-Info.plist */; };
+		F3A1B0F025724510002F920E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A1B0EF25724510002F920E /* StorageManager.swift */; };
+		F3A1B0F725724808002F920E /* Users.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3A1B0F525724808002F920E /* Users.xcdatamodeld */; };
+		F3A1B0FC2572490D002F920E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A1B0FB2572490D002F920E /* CoreDataStack.swift */; };
+		F3A1B1012572626B002F920E /* ObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A1B1002572626B002F920E /* ObjectExtensions.swift */; };
+		F3A1B106257263DE002F920E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A1B105257263DD002F920E /* CoreDataManager.swift */; };
+		F3ABEAFF257BA00100719EF0 /* CoreDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ABEAFE257BA00100719EF0 /* CoreDataContainer.swift */; };
 		F3C842462519243600DF050B /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3C842452519243600DF050B /* SFProDisplay-Regular.ttf */; };
 		F3C84248251924CD00DF050B /* SF Pro Text Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3C84247251924CD00DF050B /* SF Pro Text Regular.ttf */; };
 		F3C8424A251924EB00DF050B /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3C84249251924EB00DF050B /* Roboto-Regular.ttf */; };
@@ -114,6 +120,12 @@
 		F393345E25349AE3006D4897 /* ThemesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesManager.swift; sourceTree = "<group>"; };
 		F39646882518D4640072DACD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F39E09AD2549BDD600069DC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F3A1B0EF25724510002F920E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		F3A1B0F625724808002F920E /* Users.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Users.xcdatamodel; sourceTree = "<group>"; };
+		F3A1B0FB2572490D002F920E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		F3A1B1002572626B002F920E /* ObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectExtensions.swift; sourceTree = "<group>"; };
+		F3A1B105257263DD002F920E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F3ABEAFE257BA00100719EF0 /* CoreDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContainer.swift; sourceTree = "<group>"; };
 		F3C842452519243600DF050B /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		F3C84247251924CD00DF050B /* SF Pro Text Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Pro Text Regular.ttf"; sourceTree = "<group>"; };
 		F3C84249251924EB00DF050B /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -243,6 +255,7 @@
 				F3701B512546F45B00C88626 /* OperationManager.swift */,
 				F3E90728254EBA56004BF00D /* UUIDGenerator.swift */,
 				F3E9072A254EE88F004BF00D /* FirebaseManager.swift */,
+				F3A1B0EF25724510002F920E /* StorageManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -292,6 +305,7 @@
 		F3877E48251531A400114A68 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				F3A1B0F4257247EA002F920E /* CoreData */,
 				F3F0C9B6252E23C700104EE0 /* ThemesView */,
 				F36B565F2528755400177FB9 /* Resources */,
 				F366052D2524B474006B4EA3 /* ConvirsationView */,
@@ -329,6 +343,18 @@
 				F3877E6D251531A500114A68 /* Info.plist */,
 			);
 			path = TestUITests;
+			sourceTree = "<group>";
+		};
+		F3A1B0F4257247EA002F920E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F3A1B0F525724808002F920E /* Users.xcdatamodeld */,
+				F3A1B0FB2572490D002F920E /* CoreDataStack.swift */,
+				F3A1B1002572626B002F920E /* ObjectExtensions.swift */,
+				F3A1B105257263DD002F920E /* CoreDataManager.swift */,
+				F3ABEAFE257BA00100719EF0 /* CoreDataContainer.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		F3C842442519242400DF050B /* Fonts */ = {
@@ -557,22 +583,27 @@
 				F36B56572527583800177FB9 /* MessageCell.swift in Sources */,
 				F3877E4E251531A400114A68 /* ConversationsListViewController.swift in Sources */,
 				F3877E4A251531A400114A68 /* AppDelegate.swift in Sources */,
+				F3A1B106257263DE002F920E /* CoreDataManager.swift in Sources */,
 				F3F0C9B8252E23FE00104EE0 /* ThemesViewController.swift in Sources */,
 				F393345F25349AE3006D4897 /* ThemesManager.swift in Sources */,
 				F36605302524B4AC006B4EA3 /* ConversationViewController.swift in Sources */,
+				F3A1B0FC2572490D002F920E /* CoreDataStack.swift in Sources */,
 				F36B565E2528693500177FB9 /* Date+Difference.swift in Sources */,
 				F3701B4E2544304E00C88626 /* ProfileModel.swift in Sources */,
 				F39646892518D4640072DACD /* ProfileViewController.swift in Sources */,
+				F3A1B1012572626B002F920E /* ObjectExtensions.swift in Sources */,
 				F3E90729254EBA56004BF00D /* UUIDGenerator.swift in Sources */,
 				F3701B4A253F362000C88626 /* ResoucesManager.swift in Sources */,
 				F3E9072B254EE88F004BF00D /* FirebaseManager.swift in Sources */,
 				F3877E4C251531A400114A68 /* SceneDelegate.swift in Sources */,
 				F36C9197251C82AD00EB79DF /* CustomButton.swift in Sources */,
+				F3ABEAFF257BA00100719EF0 /* CoreDataContainer.swift in Sources */,
 				F3701B4C25441F3F00C88626 /* GCDManager.swift in Sources */,
 				F3877E7A25153E4200114A68 /* Logger.swift in Sources */,
 				F3701B48253EFABE00C88626 /* String+Uppercase.swift in Sources */,
 				F3701B522546F45C00C88626 /* OperationManager.swift in Sources */,
 				F3C8424D2519E19F00DF050B /* ImagePickerManager.swift in Sources */,
+				F3A1B0F725724808002F920E /* Users.xcdatamodeld in Sources */,
 				F3701B502544387700C88626 /* Alert.swift in Sources */,
 				F3701B5425470BB700C88626 /* ISaveData.swift in Sources */,
 				F36A74E02523578E001CCCF4 /* ConversationsCell.swift in Sources */,
@@ -580,6 +611,7 @@
 				F3701B40253B5DB800C88626 /* PaddingLabel.swift in Sources */,
 				F36605372524C249006B4EA3 /* MessageCellModel.swift in Sources */,
 				F36C9191251C787800EB79DF /* UIApplication-State+StringValue.swift in Sources */,
+				F3A1B0F025724510002F920E /* StorageManager.swift in Sources */,
 				F3701B46253C295F00C88626 /* ThemesButtonView.swift in Sources */,
 				F37075FD251F61E900A9F8D1 /* ConversationCellModel.swift in Sources */,
 			);
@@ -912,6 +944,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F3A1B0F525724808002F920E /* Users.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F3A1B0F625724808002F920E /* Users.xcdatamodel */,
+			);
+			currentVersion = F3A1B0F625724808002F920E /* Users.xcdatamodel */;
+			path = Users.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F3877E3E251531A400114A68 /* Project object */;
 }

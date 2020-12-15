@@ -9,6 +9,7 @@
 import Foundation
 
 struct MessageCellModel {
+    let identifier: String
     let content: String
     let created: Date
     let senderId: String

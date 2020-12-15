@@ -9,7 +9,7 @@
 import UIKit
 
 struct ProfileModel {
-    let name: String?
-    let profession: String?
-    let image: UIImage?
+    var name: String?
+    var profession: String?
+    var image: UIImage?
 }
